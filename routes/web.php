@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,6 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/movies/{id}', [MovieController::class, 'show'] )->name('movies.show');
+
+
